@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5001:5000" # Port 5000 was being used so I changed it to 5001
+    volumes:
+      - task_data:/app/data
+  
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - VITE_API_URL=http://localhost:5001   # or whatever your host port is
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+      
+volumes:
+  task_data: {}
