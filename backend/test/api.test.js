@@ -33,7 +33,7 @@ describe('Recipe API Tests', () => {
       expect(recipe).toHaveProperty('name');
       expect(recipe).toHaveProperty('ingredients');
       expect(recipe).toHaveProperty('instructions');
-      expect(recipe).toHaveProperty('cookingTime'); //cookTime
+      expect(recipe).toHaveProperty('cookTime');
     });
   });
 
